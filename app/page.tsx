@@ -2,12 +2,13 @@
 import { useState } from "react";
 import { TextInput } from "./components/TextInput";
 import { Button } from "./components/Button";
-import { getResponse } from "./lib/actions/getResponse";
-import { McqItem } from "@/config";
+import { getResponse, McqItem } from "./lib/actions/getResponse";
+
 
 export default function Home() {
   async function handleButton(){
-    const response = await getResponse(prompt);
+    const response = await getResponse(prompt, "1");
+    //@ts-ignore
     setResponse(response);
   }
   const[prompt, setPrompt] = useState("");

@@ -28,7 +28,8 @@ export const authOptions = {
           return{
             id : existingUser.id.toString(),
             name: existingUser.name,
-            email: existingUser.email 
+            email: existingUser.email,
+            username: existingUser.username || "" 
           }
         }else{
           return null;
@@ -39,10 +40,16 @@ export const authOptions = {
   ],
   secret: process.env.JWT_SECRET || "secret",
   callbacks: {
-    async session({token, session}: any) {
-      session.user.id = token.sub
-
-      return session
+    async jwt({ token, user }: any) {
+      if (user) {
+        token.username = user.username;
+      }
+      return token;
+    },
+    async session({ token, session }: any) {
+      session.user.id = token.sub;
+      session.user.username = token.username;
+      return session;
     }
   },
   // pages: {
