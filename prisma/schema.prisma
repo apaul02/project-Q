@@ -21,4 +21,6 @@ model User {
   name                String
   password            String  
   apikey              String?
+  referral            String?
+  coins               Int   @default(0)
 }

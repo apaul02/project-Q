@@ -19,7 +19,7 @@ export default function Home() {
     <TextInput onChange={(value) => setPrompt(value)} placeholder={"Ask Something"} label={"Hi How are you today"}></TextInput>
     <Button onClick={handleButton}>Go!</Button>
     <div>
-      {response && <p>{response.map(data => <PrintMcqs question={data.question} choice1={data.choice1} choice2={data.choice2} choice3={data.choice3} choice4={data.choice4} answer={data.answer}/>)}</p>}
+      {response && <div>{response.map(data => <PrintMcqs question={data.question} choice1={data.choice1} choice2={data.choice2} choice3={data.choice3} choice4={data.choice4} answer={data.answer}/>)}</div>}
       
     </div>  
     </main>

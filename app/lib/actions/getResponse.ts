@@ -2,7 +2,7 @@
 
 import prisma from "@/db";
 
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 
 export interface McqItem {
@@ -46,7 +46,7 @@ export async function getResponse(prompt: string, userId: string){
     choice3: { "type": "string" },
     choice4: { "type": "string" },
     answer: { "type": "string" },
-  } FOR ANSWER STRICTLY MENTION CHOICE'S NUMBER ONLY.`
+  } FOR ANSWER STRICTLY MENTION THE NUMBER.`
 });
   const result = await model.generateContent(prompt);
   const response = await result.response;
