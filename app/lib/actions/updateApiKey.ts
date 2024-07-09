@@ -6,7 +6,7 @@ export async function updateApiKey(userId: string,apiKey: string){
       id: Number(userId)
     }
   })
-  if(existingUser){
+  if(!existingUser){
     return {
       message : "User not found"
     }

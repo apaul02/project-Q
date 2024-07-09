@@ -3,6 +3,8 @@
 import prisma from "@/db";
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+
+
 export interface McqItem {
   question: string;
   choice1: string;
@@ -49,9 +51,6 @@ export async function getResponse(prompt: string, userId: string){
   const result = await model.generateContent(prompt);
   const response = await result.response;
   const text = response.text();
-  console.log(text);
-  console.log("__________")
-  console.log(typeof text);
   const questionsArray: {
     question: string;
     choice1: string;

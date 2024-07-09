@@ -19,6 +19,6 @@ model User {
   username            String?  @unique
   grade               String?
   name                String
-  password            String
+  password            String  
   apikey              String?
 }
