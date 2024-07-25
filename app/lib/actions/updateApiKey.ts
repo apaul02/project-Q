@@ -1,3 +1,4 @@
+"use server"
 import prisma from "@/db";
 
 export async function updateApiKey(userId: string,apiKey: string){
