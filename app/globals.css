@@ -2,3 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+:root {
+  --background-gradient: linear-gradient(180deg, #dedede 0%, #e1a38f 100%);
+  --text-primary: #292828;
+  --text-secondary: #00000099;
+  --accent-color: #292828;
+}
+
+body {
+  background: var(--background-gradient);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.btn-primary {
+  background-color: white;
+  color: var(--accent-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.nav-container {
+  background-color: var(--accent-color);
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+}
+
+.nav-link {
+  color: white;
+  font-weight: bold;
+  position: relative;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.5rem;
+  height: 0.1875rem;
+  background-color: white;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 1rem;
+}
+
+.feature-card h3 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}

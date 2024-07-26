@@ -1,0 +1,386 @@
+.generatePage {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #dedede 0%, #e1a38f 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Add this to center vertically */
+  padding: 2rem 20px;
+}
+
+.navbarWrapper {
+  position: absolute;
+  top: 53px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: max-content;
+  z-index: 10;
+}
+
+.content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.rectangleParent {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 40px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.geninput1 {
+  font-size: 16px;
+  color: #292828;
+  margin-left: 0.5rem;
+}
+
+.heroheader {
+  font-size: 100px;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+}
+
+.herodescribe {
+  font-size: 24px;
+  letter-spacing: 0.14em;
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+.homeinput {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  width: 100%;
+  max-width: 581px;
+  height: 69px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.geninput {
+  width: 100%;
+  height: 100%;
+  padding: 1rem 120px 1rem 1.5rem;
+  font-size: 18px;
+  border: 0.5px;
+  border-radius: 35px;
+  background-color: #e7c3be;
+  border-color: #0000004b;
+  border-style: solid;
+}
+
+.geninput::placeholder {
+  color: rgb(43, 42, 42);
+}
+
+.genbutton {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.8rem 1.5rem;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.genbutton:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.ezprepWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ezprepImage {
+  width: 100%;
+  height: auto;
+}
+
+.disclaimer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 985px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.loadingMessage {
+  font-size: 24px;
+  color: #292828;
+}
+
+.quizContainer {
+  width: 100%;
+  max-width: 666px;
+  height: 654px;
+  perspective: 1000px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.quizContainer.flipped {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-items: center;
+  justify-self: center;
+  background-color: white;
+  border-radius: 30px;
+  padding: 2rem;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  align-content: center;
+}
+
+.question {
+  font-size: 30px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option {
+  background-color: #ffe4e1;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.option:hover,
+.option.selected {
+  background-color: #ffc0cb;
+}
+
+.optionNumber {
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.optionText {
+  flex-grow: 1;
+}
+
+.timerAndDate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.timer {
+  font-weight: bold;
+}
+
+.dateTime {
+  color: #666;
+}
+
+.answerResult {
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.correctOption {
+  width: 100%;
+  max-width: 564px;
+  height: 59px;
+  margin: 0 auto;
+}
+
+.optionBackground {
+  width: 100%;
+  height: 100%;
+  background-color: #b7e4a8;
+  border-radius: 40px;
+  border: 1px solid black;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrongAnswer .optionBackground {
+  background-color: #d35858;
+}
+
+.optionBackground span {
+  font-size: 32px;
+}
+
+.correctAnswer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Vertically center items */
+  justify-content: center;
+}
+
+.correctAnswerTitle {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.wrongIcon {
+  padding-top: 10%;
+  padding-bottom: 20%;
+}
+
+.disclaimer {
+  width: 100%;
+  max-width: 985px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .heroheader {
+    font-size: 40px;
+  }
+
+  .herodescribe {
+    font-size: 18px;
+  }
+
+  .homeinput {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .geninput {
+    margin-bottom: 50px;
+  }
+
+  .option {
+    margin-bottom: 5px;
+  }
+
+  .genbutton {
+    position: static;
+    width: 100%;
+  }
+
+  .quizContainer {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .answerResult {
+    font-size: 36px;
+  }
+
+  .wrongIcon {
+    padding-top: 0%;
+    padding-bottom: 20%;
+  }
+  .correctOption {
+    height: auto;
+  }
+
+  .optionsContainer {
+    margin-bottom: 10px;
+  }
+
+  .optionBackground span {
+    font-size: 24px;
+  }
+
+  .disclaimer {
+    font-size: 14px;
+  }
+}
+
+.scoreDisplay {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.newTopicButton {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.nextButton {
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}

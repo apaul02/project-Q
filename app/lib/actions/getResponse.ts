@@ -3,6 +3,8 @@
 import prisma from "@/db";
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../auth";
 
 
 export interface McqItem {
@@ -15,16 +17,19 @@ export interface McqItem {
 }
 
 
-export async function getResponse(prompt: string, userId: string){
+export async function getResponse(prompt: string){
+  const session = await getServerSession(authOptions);
+  if(!session?.user?.id){
+    console.log("Not found")
+  }
+  let userId = session?.user?.id
   const user = await prisma.user.findFirst({
     where: {
       id : Number(userId)
     }
   });
   if(!user){
-    return {
-      message : "User not found"
-    }
+    return
   }
   let apiKey = "";
   if(user.apikey){
@@ -59,26 +64,8 @@ export async function getResponse(prompt: string, userId: string){
     choice4: string;
     answer: string;
   }[] = JSON.parse(text);
+  console.log(questionsArray)
   return questionsArray;
   
+  
 }
-
-
-let arr: any = [
-  {
-    "question": "What is a key characteristic that distinguishes humans from other species?",
-    "choice1": "Simple social structures",
-    "choice2": "Limited cognitive abilities",
-    "choice3": "Complex societies",
-    "choice4": "Lack of adaptability",
-    "answer": "Complex societies"
-  },
-  {
-    "question": "Which of the following is NOT an example of human innovation?",
-    "choice1": "Development of languages",
-    "choice2": "Creation of art",
-    "choice3": "Construction of tools",
-    "choice4": "Natural ecosystems",
-    "answer": "Natural ecosystems"
-  },
-]

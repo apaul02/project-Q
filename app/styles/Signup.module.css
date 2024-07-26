@@ -1,0 +1,144 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #dedede 0%, #e1a38f 100%);
+  padding: 20px;
+}
+
+.card {
+  background-color: #ffe4e1;
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.googleButton {
+  width: 100%;
+  padding: 12px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.divider hr {
+  flex-grow: 1;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.divider span {
+  padding: 0 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+.inputGroup {
+  margin-bottom: 15px;
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.terms input {
+  margin-right: 10px;
+}
+
+.terms a {
+  color: #5eabff;
+  text-decoration: none;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 12px;
+  background-color: #292828;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.login {
+  text-align: center;
+  font-size: 14px;
+}
+
+.login a {
+  color: #5eabff;
+  text-decoration: none;
+}
+
+
+.error {
+  color: #ffffff;
+  background-color: #d32f2f;
+  border: 2px solid #b71c1c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(211, 47, 47, 0.3);
+}
+
+.success {
+  color: #ffffff;
+  background-color: #2e7d32;
+  border: 2px solid #1b5e20;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(46, 125, 50, 0.3);
+}

@@ -14,13 +14,14 @@ datasource db {
 }
 
 model User {
-  id                  Int      @id @default(autoincrement())
-  email               String   @unique
-  username            String?  @unique
-  grade               String?
-  name                String
-  password            String  
-  apikey              String?
-  referral            String?
-  coins               Int   @default(0)
+  id            Int      @id @default(autoincrement())
+  email         String   @unique
+  username      String?  @unique
+  grade         String?
+  name          String
+  password      String
+  apikey        String?
+  referral      String?
+  referralCode  String  @unique
+  coins         Int      @default(0)
 }
