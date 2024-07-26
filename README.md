@@ -31,12 +31,12 @@ ezPrep AI is an innovative educational platform that leverages artificial intell
 
 3. Install dependencies:
    ```
-   npm install
+   yarn install
    ```
 
 4. Start the development server:
    ```
-   npm run dev
+   yarn dev
    ```
 
 5. Open your browser and visit `http://localhost:3000`
