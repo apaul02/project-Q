@@ -15,7 +15,6 @@ ezPrep AI is an innovative educational platform that leverages artificial intell
 ### Prerequisites
 
 - Node.js (v14 or later)
-- yarn
 
 ### Installation
 
@@ -31,15 +30,19 @@ ezPrep AI is an innovative educational platform that leverages artificial intell
 
 3. Install dependencies:
    ```
-   yarn install
+   npm install
+   ```
+4. SetUp Prisma:
+   ```
+   npx prisma migrate dev
+   npx prisma generate
+   ```
+5. Start the development server:
+   ```
+   npm run dev
    ```
 
-4. Start the development server:
-   ```
-   yarn dev
-   ```
-
-5. Open your browser and visit `http://localhost:3000`
+6. Open your browser and visit `http://localhost:3000`
 
 ## Usage
 
